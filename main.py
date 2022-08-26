@@ -3,9 +3,9 @@ from PIL import Image
 import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
-image = Image.open('mypict.png')
-img1 = Image.open('SKILLS.png')
-img2 = Image.open('skills.gif')
+image = Image.open('images/mypict.png')
+img1 = Image.open('images/SKILLS.png')
+img2 = Image.open('images/skills.gif')
     
 with st.sidebar:
     st.title("Other Info")
@@ -31,24 +31,24 @@ with st.expander("Certification"):
     cola, colb, colc = st.columns(3)
     cola.subheader("Data Analysis with Python")
     cola.write("Jovian")
-    cola.image("Data analysis.png")
+    cola.image("images/Data analysis.png")
     colb.subheader("SQL for Data Science")
     colb.subheader("")
     colb.write("Coursera")
-    colb.image("SQL.png")
+    colb.image("images/SQL.png")
     colc.subheader("Excel Skills for Business: Advanced")
     colc.write("Coursera")
-    colc.image("Excel.jpg")
+    colc.image("images/Excel.jpg")
     cola.subheader("Intro to Machine Learning")
     cola.write("Kaggle")
-    cola.image("ML.png")
+    cola.image("images/ML.png")
     colb.subheader("Python")
     colb.subheader("")
     colb.write("Hackerrank")
-    colb.image("python.png")
+    colb.image("images/python.png")
     colc.subheader("Getting Started with Power BI Desktop")
     colc.write("Coursera")
-    colc.image("powerBI.png")
+    colc.image("images/powerBI.png")
     
 with col2:
     st.image(image)
