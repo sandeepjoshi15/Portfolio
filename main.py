@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
 image = Image.open('images/mypict.png')
-img1 = Image.open('images/SKILLS.png')
+img1 = Image.open('images/SKILLS.PNG')
 img2 = Image.open('images/skills.gif')
     
 with st.sidebar:
@@ -31,11 +31,11 @@ with st.expander("Certification"):
     cola, colb, colc = st.columns(3)
     cola.subheader("Data Analysis with Python")
     cola.write("Jovian")
-    cola.image("images/Data analysis.png")
+    cola.image("images/Data analysis.PNG")
     colb.subheader("SQL for Data Science")
     colb.subheader("")
     colb.write("Coursera")
-    colb.image("images/SQL.png")
+    colb.image("images/SQL.PNG")
     colc.subheader("Excel Skills for Business: Advanced")
     colc.write("Coursera")
     colc.image("images/Excel.jpg")
@@ -48,7 +48,7 @@ with st.expander("Certification"):
     colb.image("images/python.png")
     colc.subheader("Getting Started with Power BI Desktop")
     colc.write("Coursera")
-    colc.image("images/powerBI.png")
+    colc.image("images/powerBI.PNG")
     
 with col2:
     st.image(image)
