@@ -49,13 +49,13 @@ with st.expander("Certifications"):
         col1, col2, col3 = st.columns(3)
         button_text = table_data[i][0]
         url = table_data[i+2][0]
-        image = "images/"+table_data[i+4][0]
+        image = Image.open('images/'+table_data[i+4][0])
         cell = create_cell(button_text, url, image)
         col1.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][1]
         url = table_data[i+2][1]
-        image = "images/"+table_data[i+4][1]
+        image = Image.open('images/'+table_data[i+4][1])
         cell = create_cell(button_text, url, image)
         col2.markdown(cell, unsafe_allow_html=True)
 
