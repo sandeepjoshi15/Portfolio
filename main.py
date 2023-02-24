@@ -40,22 +40,28 @@ table_data = [
     ["ML.png","python.png","powerBI.png"]
 ]
 
-# Define the function to create a button and an image below it
 def create_cell(button_text, url, image):
-    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='images/{image}' alt='{button_text}'>"
+    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
 
-# Define the expander with the table inside
-with st.expander("Certifications"):
+# Define the expander with the columns inside
+with st.expander("Columns with buttons and images"):
     for i in range(2):
-        st.write("<table>", unsafe_allow_html=True)
-        st.write("<tr>", unsafe_allow_html=True)
-        for j in range(3):
-            button_text = table_data[i][j]
-            url = table_data[i+2][j]
-            image = table_data[i+4][j]
-            cell = create_cell(button_text, url, image)
-            st.write(f"<td>{cell}</td>", unsafe_allow_html=True)
-        st.write("</tr>", unsafe_allow_html=True)
-        st.write("</table>", unsafe_allow_html=True)
+        col1, col2, col3 = st.columns(3)
+        button_text = table_data[i][0]
+        url = table_data[i+2][0]
+        image = table_data[i+4][0]
+        cell = create_cell(button_text, url, image)
+        col1.markdown(cell, unsafe_allow_html=True)
 
-        
+        button_text = table_data[i][1]
+        url = table_data[i+2][1]
+        image = table_data[i+4][1]
+        cell = create_cell(button_text, url, image)
+        col2.markdown(cell, unsafe_allow_html=True)
+
+        button_text = table_data[i][2]
+        url = table_data[i+2][2]
+        image = table_data[i+4][2]
+        cell = create_cell(button_text, url, image)
+        col3.markdown(cell, unsafe_allow_html=True)
+
