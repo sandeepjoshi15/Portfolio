@@ -55,6 +55,7 @@ with st.expander("Certification"):
             link = link_to_validate_certificates[k]
             cell = create_cell(header, image, link)
             st.write(f"<td><a href='{link}' target='_blank'><h2>{header}</h2></a></td>",unsafe_allow_html=True)
+            image = Image.open(image)
             st.image(image,unsafe_allow_html=True)
         st.write("</tr>",unsafe_allow_html=True)
         st.write("</table>",unsafe_allow_html=True)
