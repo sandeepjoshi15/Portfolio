@@ -31,24 +31,38 @@ with st.expander("My Skills"):
     
 with st.expander("Certification"):
     cola, colb, colc = st.columns(3)
-    cola.subheader("Data Analysis with Python")
+    cola.subheader(mdlit(
+    """@( )(https://jovian.ml/verify/MFQTGMZSGY)[blue]Data Analysis with Python[/blue]
+"""
+))
     cola.write("Jovian")
     cola.image("images/Data analysis.PNG")
-    colb.subheader("SQL for Data Science")
+    colb.subheader(mdlit(
+    """@( )(https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC)[blue]SQL for Data Science[/blue]
+""")
     colb.subheader("")
     colb.write("Coursera")
     colb.image("images/SQL.PNG")
-    colc.subheader("Excel Skills for Business: Advanced")
+    colc.subheader(mdlit(
+    """@( )(https://coursera.org/verify/Y27EFKLVVHBD)[blue]Excel Skills for Business: Advanced[/blue]
+"""
+))
     colc.write("Coursera")
     colc.image("images/Excel.jpg")
-    cola.subheader("Intro to Machine Learning")
+    cola.subheader(mdlit("""[blue]Intro to Machine Learning[/blue]""")
     cola.write("Kaggle")
     cola.image("images/ML.png")
-    colb.subheader("Python")
+    colb.subheader(mdlit(
+    """@( )(https://www.hackerrank.com/certificates/a1ac93b320b7)[blue]Python[/blue]
+"""
+))
     colb.subheader("")
     colb.write("Hackerrank")
     colb.image("images/python.png")
-    colc.subheader("Getting Started with Power BI Desktop")
+    colc.subheader(mdlit(
+    """@( )(https://www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H)[blue]Getting Started with Power BI Desktop[/blue]
+"""
+))
     colc.write("Coursera")
     colc.image("images/powerBI.PNG")
     
