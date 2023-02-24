@@ -51,7 +51,7 @@ with st.expander("Certification"):
         for j in range(3):
             header = table_data[i][j]
             image = "images/"+table_data[i+2][j]
-            k = (i*3)+j+1
+            k = (i*3)+j
             link = link_to_validate_certificates[k]
             cell = create_cell(header, image, link)
             st.write(f"<td>{cell}</td>")
