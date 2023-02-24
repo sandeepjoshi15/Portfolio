@@ -56,9 +56,9 @@ def create_cell(button_text, url, image_file):
     return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='data:image/{image_extension};base64,{encoded_image}' alt='{button_text}'>"
 
 # Define the expander with the columns inside
-with st.beta_expander("Certifications"):
+with st.expander("Certifications"):
     for i in range(2):
-        col1, col2, col3 = st.beta_columns(3)
+        col1, col2, col3 = st.columns(3)
         button_text = table_data[i][0]
         url = table_data[i+2][0]
         image_file = "images/"+table_data[i+3][0]
