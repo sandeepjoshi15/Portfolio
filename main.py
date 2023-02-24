@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import streamlit.components.v1 as components
+from markdownlit import mdlit
 
 st.set_page_config(layout="wide")
 image = Image.open('images/mypict.png')
