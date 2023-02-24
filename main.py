@@ -11,7 +11,7 @@ img2 = Image.open('images/skills.gif')
 with st.sidebar:
     st.title("Other Info")
     embed_component= {'linkedin':"""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="-sandeep-joshi" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/sandeep-joshi-271509161?trk=profile-badge"></a></div>"""}
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="-sandeep-joshi" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-sandeep-joshi?trk=profile-badge"></a></div>"""}
     components.html(embed_component['linkedin'],height=310)
     
 col1, col2 = st.columns([4, 1])
