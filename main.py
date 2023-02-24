@@ -42,7 +42,7 @@ table_data = [
 
 # Define the function to create a button and an image below it
 def create_cell(button_text, url, image):
-    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
+    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='images/{image}' alt='{button_text}'>"
 
 # Define the expander with the table inside
 with st.expander("Certifications"):
