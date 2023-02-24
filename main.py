@@ -42,7 +42,7 @@ with st.expander("Certification"):
 
     # Define the function to create a clickable header and an image below it
     def create_cell(header, image, link):
-            return f"<a href='{link}' target='_blank'><h2>{header}</h2>{image}</a>"
+            return f"<a href='{link}' target='_blank'><h2>{header}</h2></a>"
 
     # Create the table with clickable headers and images
     for i in range(2):
@@ -54,7 +54,8 @@ with st.expander("Certification"):
             k = (i*3)+j
             link = link_to_validate_certificates[k]
             cell = create_cell(header, image, link)
-            st.write(f"<td>{cell}</td>",unsafe_allow_html=True)
+            st.write(f"<td><a href='{link}' target='_blank'><h2>{header}</h2></a></td>",unsafe_allow_html=True)
+            st.image(image,unsafe_allow_html=True)
         st.write("</tr>",unsafe_allow_html=True)
-        st.write("</table>",unsafe_allow_html=True)
+     st.write("</table>",unsafe_allow_html=True)
 
