@@ -46,15 +46,15 @@ with st.expander("Certification"):
 
     # Create the table with clickable headers and images
     for i in range(2):
-        st.write("<table>")
-        st.write("<tr>")
+        st.write("<table>",unsafe_allow_html=True)
+        st.write("<tr>",unsafe_allow_html=True)
         for j in range(3):
             header = table_data[i][j]
             image = "images/"+table_data[i+2][j]
             k = (i*3)+j
             link = link_to_validate_certificates[k]
             cell = create_cell(header, image, link)
-            st.write(f"<td>{cell}</td>")
-        st.write("</tr>")
-        st.write("</table>")
+            st.write(f"<td>{cell}</td>",unsafe_allow_html=True)
+        st.write("</tr>",unsafe_allow_html=True)
+        st.write("</table>",unsafe_allow_html=True)
 
