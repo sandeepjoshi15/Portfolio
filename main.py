@@ -34,7 +34,6 @@ with st.expander("Certification"):
     
     import streamlit as st
 
-# Define the data for the table
 table_data = [    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
     ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
     ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
@@ -45,10 +44,7 @@ link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://
 
 # Define the function to create a clickable header and an image below it
 def create_cell(header, image, link):
-    if header.startswith("http"):
-        return f"<a href='{header}' target=link><h2>{image}</h2></a>"
-    else:
-        return f"<a href='#'><h2>{header}</h2></a><img src='{image}' alt='{header}'>"
+        return f"<a href='{link}' target='_blank'><h2>{header}</h2>{image}</a>"
 
 # Create the table with clickable headers and images
 for i in range(2):
@@ -63,9 +59,8 @@ for i in range(2):
         st.write(f"<td>{cell}</td>")
     st.write("</tr>")
     st.write("</table>")
-
     
-    
+    """
     
     cola, colb, colc = st.columns(3)
     cola.subheader(mdlit(
@@ -104,4 +99,4 @@ for i in range(2):
     colc.image("images/powerBI.PNG")
     
 with col2:
-    st.image(image, use_column_width = 'always')
+    st.image(image, use_column_width = 'always')"""
