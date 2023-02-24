@@ -44,24 +44,24 @@ def create_cell(button_text, url, image):
     return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
 
 # Define the expander with the columns inside
-with st.expander("Columns with buttons and images"):
+with st.expander("Certifications"):
     for i in range(2):
         col1, col2, col3 = st.columns(3)
         button_text = table_data[i][0]
         url = table_data[i+2][0]
-        image = table_data[i+4][0]
+        image = "images/"+table_data[i+4][0]
         cell = create_cell(button_text, url, image)
         col1.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][1]
         url = table_data[i+2][1]
-        image = table_data[i+4][1]
+        image = "images/"+table_data[i+4][1]
         cell = create_cell(button_text, url, image)
         col2.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][2]
         url = table_data[i+2][2]
-        image = table_data[i+4][2]
+        image = "images/"+table_data[i+4][2]
         cell = create_cell(button_text, url, image)
         col3.markdown(cell, unsafe_allow_html=True)
 
