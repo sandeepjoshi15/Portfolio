@@ -31,32 +31,20 @@ with st.expander("My Skills"):
     st.image(img1,use_column_width = 'always')
     
 with st.expander("Certification"):
-    
-    table_data = [    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
-        ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
-        ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
-        ["ML.png","python.png","powerBI.png"]
-        ]
 
+    # Define the data for the table
+    table_data = ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced","Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"]
+    image_data = ["Data analysis.PNG", "SQL.PNG", "Excel.jpg","ML.png","python.png","powerBI.png"]
     link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD","","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"]
 
-    # Define the function to create a clickable header and an image below it
-    def create_cell(header, image, link):
-            return f"<a href='{link}' target='_blank'><h2>{header}</h2></a>"
 
-    # Create the table with clickable headers and images
-    for i in range(2):
-        st.write("<table>",unsafe_allow_html=True)
-        st.write("<tr>",unsafe_allow_html=True)
-        for j in range(3):
-            header = table_data[i][j]
-            image = "images/"+table_data[i+2][j]
-            k = (i*3)+j
-            link = link_to_validate_certificates[k]
-            cell = create_cell(header, image, link)
-            st.write(f"<td><a href='{link}' target='_blank'><h2>{header}</h2></a></td>",unsafe_allow_html=True)
-            image = Image.open(image)
-            st.image(image,unsafe_allow_html=True)
-        st.write("</tr>",unsafe_allow_html=True)
-        st.write("</table>",unsafe_allow_html=True)
+    # Define the clickable headings with images
+    for i in range(6):
+        l = []
+        l.append(st.button(f"{table_data[i]}\n\n![image_data[i]](link_to_validate_certificates[i])"))
+    #cell_1_content = st.button("Click me!\n\n![Image 1](https://via.placeholder.com/150)")
 
+    # Create the table
+    st.table([l])
+
+        
