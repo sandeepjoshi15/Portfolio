@@ -32,71 +32,29 @@ with st.expander("My Skills"):
     
 with st.expander("Certification"):
     
-    import streamlit as st
+    table_data = [    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
+        ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
+        ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
+        ["ML.png","python.png","powerBI.png"]
+        ]
 
-table_data = [    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
-    ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
-    ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
-    ["ML.png","python.png","powerBI.png"]
-    ]
+    link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD","","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"]
 
-link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD","","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"]
+    # Define the function to create a clickable header and an image below it
+    def create_cell(header, image, link):
+            return f"<a href='{link}' target='_blank'><h2>{header}</h2>{image}</a>"
 
-# Define the function to create a clickable header and an image below it
-def create_cell(header, image, link):
-        return f"<a href='{link}' target='_blank'><h2>{header}</h2>{image}</a>"
+    # Create the table with clickable headers and images
+    for i in range(2):
+        st.write("<table>")
+        st.write("<tr>")
+        for j in range(3):
+            header = table_data[i][j]
+            image = "images/"+table_data[i+2][j]
+            k = (i*3)+j+1
+            link = link_to_validate_certificates[k]
+            cell = create_cell(header, image, link)
+            st.write(f"<td>{cell}</td>")
+        st.write("</tr>")
+        st.write("</table>")
 
-# Create the table with clickable headers and images
-for i in range(2):
-    st.write("<table>")
-    st.write("<tr>")
-    for j in range(3):
-        header = table_data[i][j]
-        image = "images/"+table_data[i+2][j]
-        k = (i*3)+j+1
-        link = link_to_validate_certificates[k]
-        cell = create_cell(header, image, link)
-        st.write(f"<td>{cell}</td>")
-    st.write("</tr>")
-    st.write("</table>")
-    
-    """
-    
-    cola, colb, colc = st.columns(3)
-    cola.subheader(mdlit(
-    """@( )(https://jovian.ml/verify/MFQTGMZSGY)[blue]Data Analysis with Python[/blue]
-"""
-))
-    cola.write("Jovian")
-    cola.image("images/Data analysis.PNG")
-    colb.subheader(mdlit(
-    """@( )(https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC)[blue]SQL for Data Science[/blue]
-"""))
-    colb.subheader("")
-    colb.write("Coursera")
-    colb.image("images/SQL.PNG")
-    colc.subheader(mdlit(
-    """@( )(https://coursera.org/verify/Y27EFKLVVHBD)[blue]Excel Skills for Business: Advanced[/blue]
-"""
-))
-    colc.write("Coursera")
-    colc.image("images/Excel.jpg")
-    cola.subheader(mdlit("""[blue]Intro to Machine Learning[/blue]"""))
-    cola.write("Kaggle")
-    cola.image("images/ML.png")
-    colb.subheader(mdlit(
-    """@( )(https://www.hackerrank.com/certificates/a1ac93b320b7)[blue]Python[/blue]
-"""
-))
-    colb.subheader("")
-    colb.write("Hackerrank")
-    colb.image("images/python.png")
-    colc.subheader(mdlit(
-    """@( )(https://www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H)[blue]Getting Started with Power BI Desktop[/blue]
-"""
-))
-    colc.write("Coursera")
-    colc.image("images/powerBI.PNG")
-    
-with col2:
-    st.image(image, use_column_width = 'always')"""
