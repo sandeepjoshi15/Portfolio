@@ -45,7 +45,7 @@ def create_cell(button_text, url, image):
     return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
 
 # Define the expander with the table inside
-with st.beta_expander("Certifications"):
+with st.expander("Certifications"):
     for i in range(2):
         st.write("<table>")
         st.write("<tr>")
