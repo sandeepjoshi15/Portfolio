@@ -57,5 +57,5 @@ with st.expander("Certification"):
             st.write(f"<td><a href='{link}' target='_blank'><h2>{header}</h2></a></td>",unsafe_allow_html=True)
             st.image(image,unsafe_allow_html=True)
         st.write("</tr>",unsafe_allow_html=True)
-     st.write("</table>",unsafe_allow_html=True)
+        st.write("</table>",unsafe_allow_html=True)
 
