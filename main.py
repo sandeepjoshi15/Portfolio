@@ -40,28 +40,38 @@ table_data = [
     ["ML.png","python.png","powerBI.png"]
 ]
 
-def create_cell(button_text, url, image):
-    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
+def create_cell(button_text, url, image_file):
+    image = Image.open(image_file)
+    if image.format == "JPEG":
+        image_extension = "jpeg"
+    elif image.format == "PNG":
+        image_extension = "png"
+    else:
+        st.warning("Unsupported image format")
+        return ""
+
+    with open(image_file, "rb") as f:
+        encoded_image = base64.b64encode(f.read()).decode()
+    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='data:image/{image_extension};base64,{encoded_image}' alt='{button_text}'>"
 
 # Define the expander with the columns inside
-with st.expander("Certifications"):
+with st.beta_expander("Certifications"):
     for i in range(2):
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.beta_columns(3)
         button_text = table_data[i][0]
         url = table_data[i+2][0]
-        image = Image.open('images/'+table_data[i+4][0])
-        cell = create_cell(button_text, url, image)
+        image_file = "images/"+table_data[i+3][0]
+        cell = create_cell(button_text, url, image_file)
         col1.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][1]
         url = table_data[i+2][1]
-        image = Image.open('images/'+table_data[i+4][1])
-        cell = create_cell(button_text, url, image)
+        image_file = "images/"+table_data[i+3][1]
+        cell = create_cell(button_text, url, image_file)
         col2.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][2]
         url = table_data[i+2][2]
-        image = "images/"+table_data[i+4][2]
-        cell = create_cell(button_text, url, image)
+        image_file = "images/"+table_data[i+3][2]
+        cell = create_cell(button_text, url, image_file)
         col3.markdown(cell, unsafe_allow_html=True)
-
