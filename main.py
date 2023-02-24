@@ -30,21 +30,32 @@ with col1:
 with st.expander("My Skills"):    
     st.image(img1,use_column_width = 'always')
     
-with st.expander("Certification"):
+# Define the data for the table
+table_data = [
+    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
+    ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
+    ["https://jovian.ml/verify/MFQTGMZSGY", "https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD"],
+    ["","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"],
+    ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
+    ["ML.png","python.png","powerBI.png"]
+]
 
-    # Define the data for the table
-    table_data = ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced","Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"]
-    image_data = ["Data analysis.PNG", "SQL.PNG", "Excel.jpg","ML.png","python.png","powerBI.png"]
-    link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD","","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"]
+# Define the function to create a button and an image below it
+def create_cell(button_text, url, image):
+    return f"<a href='{url}' target='_blank'><button>{button_text}</button></a><br><img src='{image}' alt='{button_text}'>"
 
-
-    # Define the clickable headings with images
-    for i in range(6):
-        l = []
-        l.append(st.button(f"{table_data[i]}\n\n![image_data[i]](link_to_validate_certificates[i])"))
-    #cell_1_content = st.button("Click me!\n\n![Image 1](https://via.placeholder.com/150)")
-
-    # Create the table
-    st.table([l])
+# Define the expander with the table inside
+with st.beta_expander("Certifications"):
+    for i in range(2):
+        st.write("<table>")
+        st.write("<tr>")
+        for j in range(3):
+            button_text = table_data[i][j]
+            url = table_data[i+2][j]
+            image = table_data[i+4][j]
+            cell = create_cell(button_text, url, image)
+            st.write(f"<td>{cell}</td>")
+        st.write("</tr>")
+        st.write("</table>")
 
         
