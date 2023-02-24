@@ -11,7 +11,7 @@ img2 = Image.open('images/skills.gif')
 with st.sidebar:
     st.title("Other Info")
     embed_component= {'linkedin':"""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="-sandeep-joshi" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-sandeep-joshi?trk=profile-badge">Sandeep Joshi</a></div>
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="-sandeep-joshi" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-sandeep-joshi?trk=profile-badge">Sandeep Joshi</a></div>
               """}
     components.html(embed_component['linkedin'],height=310)
     
@@ -31,6 +31,42 @@ with st.expander("My Skills"):
     st.image(img1,use_column_width = 'always')
     
 with st.expander("Certification"):
+    
+    import streamlit as st
+
+# Define the data for the table
+table_data = [    ["Data Analysis with Python", "SQL for Data Science", "Excel Skills for Business: Advanced"],
+    ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
+    ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
+    ["ML.png","python.png","powerBI.png"]
+    ]
+
+link_to_validate_certificates = ["https://jovian.ml/verify/MFQTGMZSGY","https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD","","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"]
+
+# Define the function to create a clickable header and an image below it
+def create_cell(header, image, link):
+    if header.startswith("http"):
+        return f"<a href='{header}' target=link><h2>{image}</h2></a>"
+    else:
+        return f"<a href='#'><h2>{header}</h2></a><img src='{image}' alt='{header}'>"
+
+# Create the table with clickable headers and images
+for i in range(2):
+    st.write("<table>")
+    st.write("<tr>")
+    for j in range(3):
+        header = table_data[i][j]
+        image = "images/"+table_data[i+2][j]
+        k = (i*3)+j+1
+        link = link_to_validate_certificates[k]
+        cell = create_cell(header, image, link)
+        st.write(f"<td>{cell}</td>")
+    st.write("</tr>")
+    st.write("</table>")
+
+    
+    
+    
     cola, colb, colc = st.columns(3)
     cola.subheader(mdlit(
     """@( )(https://jovian.ml/verify/MFQTGMZSGY)[blue]Data Analysis with Python[/blue]
