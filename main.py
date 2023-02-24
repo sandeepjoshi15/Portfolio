@@ -39,7 +39,7 @@ with st.expander("Certification"):
     cola.image("images/Data analysis.PNG")
     colb.subheader(mdlit(
     """@( )(https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC)[blue]SQL for Data Science[/blue]
-""")
+"""))
     colb.subheader("")
     colb.write("Coursera")
     colb.image("images/SQL.PNG")
