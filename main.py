@@ -49,7 +49,7 @@ with st.expander("Certification"):
 ))
     colc.write("Coursera")
     colc.image("images/Excel.jpg")
-    cola.subheader(mdlit("""[blue]Intro to Machine Learning[/blue]""")
+    cola.subheader(mdlit("""[blue]Intro to Machine Learning[/blue]"""))
     cola.write("Kaggle")
     cola.image("images/ML.png")
     colb.subheader(mdlit(
