@@ -37,8 +37,8 @@ table_data = [
     ["Intro to Machine Learning", "Python", "Getting Started with Power BI Desktop"],
     ["https://jovian.ml/verify/MFQTGMZSGY", "https://www.coursera.org/account/accomplishments/certificate/V6X7VHAGW9XC","https://coursera.org/verify/Y27EFKLVVHBD"],
     ["","https://www.hackerrank.com/certificates/a1ac93b320b7","www.coursera.org/account/accomplishments/certificate/C682J53VXQ6H"],
-    ["Data analysis.PNG", "SQL.PNG", "Excel.jpg"],
-    ["ML.png","python.png","powerBI.png"]
+    ["images/Data analysis.PNG", "images/SQL.PNG", "images/Excel.jpg"],
+    ["images/ML.png","images/python.png","images/powerBI.png"]
 ]
 
 def create_cell(button_text, url, image_file):
@@ -61,18 +61,18 @@ with st.expander("Certifications"):
         col1, col2, col3 = st.columns(3)
         button_text = table_data[i][0]
         url = table_data[i+2][0]
-        image_file = "images/"+table_data[i+3][0]
+        image_file = table_data[i+3][0]
         cell = create_cell(button_text, url, image_file)
         col1.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][1]
         url = table_data[i+2][1]
-        image_file = "images/"+table_data[i+3][1]
+        image_file = table_data[i+3][1]
         cell = create_cell(button_text, url, image_file)
         col2.markdown(cell, unsafe_allow_html=True)
 
         button_text = table_data[i][2]
         url = table_data[i+2][2]
-        image_file = "images/"+table_data[i+3][2]
+        image_file = table_data[i+3][2]
         cell = create_cell(button_text, url, image_file)
         col3.markdown(cell, unsafe_allow_html=True)
